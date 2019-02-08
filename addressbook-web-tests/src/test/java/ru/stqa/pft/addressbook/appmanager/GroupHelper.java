@@ -1,12 +1,14 @@
 package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.pft.addressbook.model.GroupData;
+import ru.stqa.pft.addressbook.model.ProfileData;
 
 public class GroupHelper extends HelperBase {
 
-    public GroupHelper(FirefoxDriver wd) {
+    public GroupHelper(WebDriver wd) {
         super(wd);
     }
 
@@ -22,6 +24,14 @@ public class GroupHelper extends HelperBase {
         type(By.name("group_name"), groupData.getName());
         type(By.name("group_header"), groupData.getHeader());
         type(By.name("group_footer"), groupData.getFooter());
+    }
+    public void fillProfileForm(ProfileData profileData) {
+        type(By.name("firstname"), profileData.getFirstName());
+        type(By.name("middlename"), profileData.getMidName());
+        type(By.name("lastname"), profileData.getLastName());
+        type(By.name("nickname"), profileData.getNickName());
+        type(By.name("company"), profileData.getCompany());
+        type(By.name("email"), profileData.getEmail());
     }
 
     public void initGroupCreation() {
@@ -42,5 +52,8 @@ public class GroupHelper extends HelperBase {
 
     public void submitGroupModification() {
         click(By.name("update"));
+    }
+    public void submitProfile() {
+        click(By.name("submit"));
     }
 }
