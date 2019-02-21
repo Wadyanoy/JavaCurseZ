@@ -7,9 +7,9 @@ public class TestProfileCreation extends TestBase {
 
     @Test
     public void TestProfileCreation() {
-        app.getNavigationHelper().gotoProfilePage();
-        app.getGroupHelper().fillProfileForm(new ProfileData("Wadya","Sergeevi4","Seledtsov" , "Wadyanoy", "otr" , "Wadyanoy@gmail.com"));
-        app.getGroupHelper().submitProfile();
+        app.goTo().gotoProfilePage();
+        app.group().fillProfileForm(new ProfileData("Wadya","Sergeevi4","Seledtsov" , "Wadyanoy", "otr" , "Wadyanoy@gmail.com"));
+        app.group().submitProfile();
     }
 
 }
