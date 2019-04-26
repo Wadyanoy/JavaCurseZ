@@ -1,8 +1,12 @@
 package ru.stqa.pft.addressbook.model;
 
-import java.util.Objects;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
+import java.util.Objects;
+@XStreamAlias("group") //заменяет длинный тег  на короткий group
 public class GroupData {
+    @XStreamOmitField //пропускает следующий тег (он нам не нужен в хмл)
     private int id = Integer.MAX_VALUE;
     private String name;
     private String header;
